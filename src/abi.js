@@ -1,0 +1,22 @@
+export const ABI = [
+'function arbitrator() view returns (address)',
+'function propertyCount() view returns (uint256)',
+'function agreementCount() view returns (uint256)',
+'function properties(uint256) view returns (address landlord,string name,uint256 rent,uint256 deposit,bool exists)',
+'function agreements(uint256) view returns (uint256 propertyId,address tenant,uint64 start,uint64 end,bytes32 termsHash,bool landlordConfirmed,bool tenantConfirmed,bool funded,uint256 depositBalance,uint8 status)',
+'function registerProperty(string,uint256,uint256) returns (uint256)',
+'function createAgreement(uint256,address,uint64,uint64,bytes32) returns (uint256)',
+'function confirmAgreement(uint256)',
+'function depositSecurity(uint256) payable',
+'function payRent(uint256) payable',
+'function paymentCount(uint256) view returns (uint256)',
+'function paymentAt(uint256,uint256) view returns (uint256 amount,uint256 paidAt)',
+'function proposeRefund(uint256,uint256,string)',
+'function approveRefund(uint256)',
+'function finalizeRefund(uint256)',
+'function openDispute(uint256,string)',
+'function resolveDispute(uint256,uint256,string)',
+'function getResolution(uint256) view returns (uint256 refund,string reason,bool proposed,bool landlordApproved,bool tenantApproved)',
+'event PropertyRegistered(uint256 indexed id,address indexed landlord)',
+'event AgreementCreated(uint256 indexed id,uint256 indexed propertyId,address indexed tenant)'
+];
